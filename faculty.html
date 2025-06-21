@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Mental Health Literacy Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="min-h-screen flex">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-white shadow-lg hidden lg:block">
+            <div class="p-6">
+                <div class="flex items-center justify-center mb-8">
+                    <div class="h-10 w-10 rounded-full gradient-bg flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                    </div>
+                    <h1 class="ml-3 text-xl font-bold text-gray-800">MindWell Hub</h1>
+                </div>
+
+                <div class="space-y-2">
+                    <a href="dashboard.html" id="dashboard-btn"
+                        class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Dashboard
+                    </a>
+
+                    <a id="modules-btn" href="learning.html"
+                        class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        Learning Modules
+                    </a>
+
+                    <a id="assessment-btn" href="assessment.html"
+                        class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                        </svg>
+                        Self-Assessment
+                    </a>
+
+                    <a href="ai.html" id="ai-btn"
+                        class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        AI Assistant
+                    </a>
+
+                    <a id="telehealth-btn" href="telehealth.html"
+                        class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                        Telehealth Services
+                    </a>
+
+                    <a id="community-btn" href="peer.html"
+                        class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Peer Community
+                    </a>
+
+                    <a href="profileSetup.html" id="profile-btn"
+                        class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        My Profile
+                    </a>
+
+                    <a href="faculty.html" id="faculty-btn"
+                        class="flex items-center w-full p-3 rounded-lg bg-indigo-50 text-indigo-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                            <path
+                                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                        </svg>
+                        Faculty Tools
+                    </a>
+
+                    <a href="admindb.html" id="admin-btn"
+                        class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        Admin Dashboard
+                    </a>
+
+                    <div class="pt-4 mt-4 border-t border-gray-200">
+
+                        <a id="help-btn" href="help.html"
+                            class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Help & Support
+                        </a>
+
+                        <a id="settings-btn" href="settings.html"
+                            class="flex items-center w-full p-3 rounded-lg text-gray-600 hover:bg-gray-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Settings
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Navigation -->
+            <header class="bg-white shadow-sm z-10">
+                <div class="flex items-center justify-between p-4">
+                    <div class="flex items-center">
+                        <button class="text-gray-500 focus:outline-none lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                        <h2 class="text-xl font-semibold text-gray-800 ml-4"></h2>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <button class="p-1 rounded-full text-gray-400 hover:text-gray-600 focus:outline-none relative">
+                            <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                        </button>
+
+                        <div class="relative">
+                            <button class="flex items-center focus:outline-none">
+                                <div
+                                    class="h-8 w-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-semibold">
+                                    JS</div>
+                                <span class="ml-2 text-sm font-medium text-gray-700">John Smith</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4 text-gray-400" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-y-auto bg-gray-50 p-4 md:p-6">
+                <div id="faculty" class="space-y-6">
+
+                    <!-- Main Content -->
+                    <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                        <div class="mb-8 flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div>
+                                <h1 class="text-3xl font-bold text-gray-900">Faculty Support Tools</h1>
+                                <p class="mt-2 text-gray-600">Resources and tools to help you identify and support
+                                    students in distress.</p>
+                            </div>
+                            <div class="mt-4 md:mt-0">
+                                <button
+                                    class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors mr-2">
+                                    <span class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                        </svg>
+                                        Report Concern
+                                    </span>
+                                </button>
+                                <button
+                                    class="px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+                                    <span class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Get Help
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Alert Banner -->
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-8 rounded-md">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <h3 class="text-sm font-medium text-red-800">Important Reminder</h3>
+                                    <div class="mt-1 text-sm text-red-700">
+                                        <p>You have 3 pending student concern reports to review. Please address them as
+                                            soon as possible.</p>
+                                    </div>
+                                    <div class="mt-2">
+                                        <button class="text-sm font-medium text-red-800 hover:text-red-900">
+                                            View Reports →
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Grid Layout -->
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <!-- Left Column - Training & Resources -->
+                            <div class="lg:col-span-2 space-y-6">
+                                <!-- Tabs Navigation -->
+                                <div class="bg-white rounded-xl shadow-sm p-4">
+                                    <div class="border-b border-gray-200">
+                                        <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                                            <button
+                                                class="tab-active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                                id="tab-training">
+                                                Training Materials
+                                            </button>
+                                            <button
+                                                class="tab-inactive whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                                id="tab-identification">
+                                                Identification Guides
+                                            </button>
+                                            <button
+                                                class="tab-inactive whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                                id="tab-intervention">
+                                                Intervention Strategies
+                                            </button>
+                                            <button
+                                                class="tab-inactive whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                                id="tab-referral">
+                                                Referral Process
+                                            </button>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                                <!-- Tab Content - Training Materials -->
+                                <div id="content-training" class="space-y-6">
+                                    <!-- Training Progress -->
+                                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                                        <div class="flex items-center justify-between mb-6">
+                                            <h2 class="text-xl font-semibold text-gray-800">Your Training Progress</h2>
+                                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">3
+                                                of 4 Complete</span>
+                                        </div>
+
+                                        <div class="space-y-4">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                                    </svg>
+                                                </div>
+                                                <div class="flex-1">
+                                                    <div class="flex items-center justify-between">
+                                                        <h3 class="font-medium">Mental Health Basics for Faculty</h3>
+                                                        <span class="text-sm text-green-600">Completed</span>
+                                                    </div>
+                                                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                                                        <div class="bg-green-500 h-2 rounded-full" style="width: 100%">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                                    </svg>
+                                                </div>
+                                                <div class="flex-1">
+                                                    <div class="flex items-center justify-between">
+                                                        <h3 class="font-medium">Recognizing Signs of Distress</h3>
+                                                        <span class="text-sm text-green-600">Completed</span>
+                                                    </div>
+                                                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                                                        <div class="bg-green-500 h-2 rounded-full" style="width: 100%">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M5 13l4 4L19 7" />
+                                                    </svg>
+                                                </div>
+                                                <div class="flex-1">
+                                                    <div class="flex items-center justify-between">
+                                                        <h3 class="font-medium">Supportive Communication Techniques</h3>
+                                                        <span class="text-sm text-green-600">Completed</span>
+                                                    </div>
+                                                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                                                        <div class="bg-green-500 h-2 rounded-full" style="width: 100%">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 mr-4 flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="flex-1">
+                                                    <div class="flex items-center justify-between">
+                                                        <h3 class="font-medium">Crisis Response Protocol</h3>
+                                                        <span class="text-sm text-indigo-600">In Progress</span>
+                                                    </div>
+                                                    <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                                                        <div class="bg-indigo-500 h-2 rounded-full" style="width: 45%">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-6">
+                                            <button
+                                                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                                                Continue Training
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Featured Training Resources -->
+                                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                                        <h2 class="text-xl font-semibold text-gray-800 mb-6">Featured Training Resources
+                                        </h2>
+                                        <div class="grid md:grid-cols-2 gap-6">
+                                            <a href="#"
+                                                class="block resource-card p-5 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                                                <div class="flex items-center mb-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-6 w-6 text-blue-600 mr-2" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span class="font-medium text-blue-800">Video Workshop</span>
+                                                </div>
+                                                <h3 class="font-medium text-lg mb-1">Supporting Students with Anxiety
+                                                </h3>
+                                                <p class="text-sm text-gray-600 mb-3">Learn practical strategies to help
+                                                    students manage academic anxiety.</p>
+                                                <div class="flex items-center text-xs text-blue-700">
+                                                    <span>45 minutes</span>
+                                                    <span class="mx-2">•</span>
+                                                    <span>Certificate Available</span>
+                                                </div>
+                                            </a>
+
+                                            <a href="#"
+                                                class="block resource-card p-5 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors">
+                                                <div class="flex items-center mb-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-6 w-6 text-purple-600 mr-2" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                                    </svg>
+                                                    <span class="font-medium text-purple-800">Interactive Module</span>
+                                                </div>
+                                                <h3 class="font-medium text-lg mb-1">Classroom Accommodations</h3>
+                                                <p class="text-sm text-gray-600 mb-3">Explore effective accommodations
+                                                    for students with mental health needs.</p>
+                                                <div class="flex items-center text-xs text-purple-700">
+                                                    <span>30 minutes</span>
+                                                    <span class="mx-2">•</span>
+                                                    <span>Includes Templates</span>
+                                                </div>
+                                            </a>
+
+                                            <a href="#"
+                                                class="block resource-card p-5 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
+                                                <div class="flex items-center mb-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-6 w-6 text-green-600 mr-2" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                                    </svg>
+                                                    <span class="font-medium text-green-800">PDF Guide</span>
+                                                </div>
+                                                <h3 class="font-medium text-lg mb-1">Syllabus Mental Health Statements
+                                                </h3>
+                                                <p class="text-sm text-gray-600 mb-3">Sample language to include in your
+                                                    course syllabi to support student wellbeing.</p>
+                                                <div class="flex items-center text-xs text-green-700">
+                                                    <span>10 minutes</span>
+                                                    <span class="mx-2">•</span>
+                                                    <span>Downloadable</span>
+                                                </div>
+                                            </a>
+
+                                            <a href="#"
+                                                class="block resource-card p-5 bg-yellow-50 rounded-lg hover:bg-yellow-100 transition-colors">
+                                                <div class="flex items-center mb-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-6 w-6 text-yellow-600 mr-2" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                                    </svg>
+                                                    <span class="font-medium text-yellow-800">Case Studies</span>
+                                                </div>
+                                                <h3 class="font-medium text-lg mb-1">Difficult Conversations</h3>
+                                                <p class="text-sm text-gray-600 mb-3">Practice scenarios for addressing
+                                                    mental health concerns with students.</p>
+                                                <div class="flex items-center text-xs text-yellow-700">
+                                                    <span>20 minutes</span>
+                                                    <span class="mx-2">•</span>
+                                                    <span>Discussion Guide</span>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div class="mt-6 text-center">
+                                            <button
+                                                class="px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors">
+                                                View All Training Resources
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab Content - Identification Guides (Hidden by default) -->
+                                <div id="content-identification" class="space-y-6 hidden">
+                                    <!-- Warning Signs Card -->
+                                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                                        <h2 class="text-xl font-semibold text-gray-800 mb-6">Common Warning Signs</h2>
+
+                                        <div class="grid md:grid-cols-2 gap-6">
+                                            <div class="border border-red-200 rounded-lg p-4 bg-red-50">
+                                                <h3 class="font-medium text-lg text-red-800 mb-3">Academic Warning Signs
+                                                </h3>
+                                                <ul class="space-y-2">
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Sudden decline in academic
+                                                            performance</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Repeated absences or
+                                                            tardiness</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Missing assignments or exams</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Difficulty concentrating or
+                                                            focusing</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Disorganized thinking or
+                                                            writing</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="border border-orange-200 rounded-lg p-4 bg-orange-50">
+                                                <h3 class="font-medium text-lg text-orange-800 mb-3">Behavioral Warning
+                                                    Signs</h3>
+                                                <ul class="space-y-2">
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-orange-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Noticeable changes in appearance or
+                                                            hygiene</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-orange-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Social withdrawal or
+                                                            isolation</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-orange-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Increased irritability or emotional
+                                                            outbursts</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-orange-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Unusual or concerning content in
+                                                            assignments</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-orange-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Excessive fatigue or appearing
+                                                            sleep-deprived</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="border border-purple-200 rounded-lg p-4 bg-purple-50">
+                                                <h3 class="font-medium text-lg text-purple-800 mb-3">Emotional Warning
+                                                    Signs</h3>
+                                                <ul class="space-y-2">
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Expressions of hopelessness or
+                                                            worthlessness</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Excessive worry or fear</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Flat affect or lack of emotional
+                                                            expression</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Overwhelming stress or inability to
+                                                            cope</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Expressions of self-harm or suicidal
+                                                            thoughts</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="border border-blue-200 rounded-lg p-4 bg-blue-50">
+                                                <h3 class="font-medium text-lg text-blue-800 mb-3">Physical Warning
+                                                    Signs</h3>
+                                                <ul class="space-y-2">
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Significant weight loss or
+                                                            gain</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Frequent complaints of physical
+                                                            ailments</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Visible signs of self-harm</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Appearing disoriented or
+                                                            confused</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">Trembling or physical
+                                                            agitation</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                            <div class="flex items-start">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="h-6 w-6 text-yellow-600 mr-3" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                <div>
+                                                    <h4 class="font-medium text-yellow-800 mb-1">Important Note</h4>
+                                                    <p class="text-sm text-gray-700">The presence of these signs does
+                                                        not necessarily indicate a mental health condition, but they may
+                                                        warrant attention and support. When in doubt, consult with
+                                                        campus mental health professionals.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Identification Tools -->
+                                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                                        <h2 class="text-xl font-semibold text-gray-800 mb-6">Identification Tools</h2>
+
+                                        <div class="space-y-4">
+                                            <a href="#"
+                                                class="flex items-center p-4 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition-colors">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4 flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-medium text-lg mb-1">Distress Identification
+                                                        Checklist</h3>
+                                                    <p class="text-sm text-gray-600">A printable checklist to help
+                                                        identify signs of student distress.</p>
+                                                </div>
+                                            </a>
+
+                                            <a href="#"
+                                                class="flex items-center p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-medium text-lg mb-1">Classroom Observation Form</h3>
+                                                    <p class="text-sm text-gray-600">Document behavioral changes and
+                                                        concerns over time.</p>
+                                                </div>
+                                            </a>
+
+                                            <a href="#"
+                                                class="flex items-center p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4 flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-medium text-lg mb-1">Decision Tree Guide</h3>
+                                                    <p class="text-sm text-gray-600">Step-by-step guidance on when and
+                                                        how to intervene.</p>
+                                                </div>
+                                            </a>
+
+                                            <a href="#"
+                                                class="flex items-center p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors">
+                                                <div
+                                                    class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4 flex-shrink-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-medium text-lg mb-1">Interactive Scenario Training
+                                                    </h3>
+                                                    <p class="text-sm text-gray-600">Practice identifying warning signs
+                                                        through simulated scenarios.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab Content - Intervention Strategies (Hidden by default) -->
+                                <div id="content-intervention" class="space-y-6 hidden">
+                                    <!-- Intervention Approaches -->
+                                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                                        <h2 class="text-xl font-semibold text-gray-800 mb-6">Intervention Approaches
+                                        </h2>
+
+                                        <div class="space-y-6">
+                                            <div class="border-l-4 border-indigo-500 pl-4">
+                                                <h3 class="font-medium text-lg mb-2">The CARE Approach</h3>
+                                                <div class="grid md:grid-cols-2 gap-4">
+                                                    <div class="bg-indigo-50 p-4 rounded-lg">
+                                                        <div class="flex items-center mb-2">
+                                                            <span
+                                                                class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold mr-2">C</span>
+                                                            <span class="font-medium text-indigo-800">Connect</span>
+                                                        </div>
+                                                        <p class="text-sm text-gray-700">Establish rapport and a safe
+                                                            space for conversation. Choose a private location and
+                                                            express genuine concern.</p>
+                                                    </div>
+                                                    <div class="bg-indigo-50 p-4 rounded-lg">
+                                                        <div class="flex items-center mb-2">
+                                                            <span
+                                                                class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold mr-2">A</span>
+                                                            <span class="font-medium text-indigo-800">Acknowledge</span>
+                                                        </div>
+                                                        <p class="text-sm text-gray-700">Validate their feelings and
+                                                            experiences. Use specific observations rather than
+                                                            interpretations or judgments.</p>
+                                                    </div>
+                                                    <div class="bg-indigo-50 p-4 rounded-lg">
+                                                        <div class="flex items-center mb-2">
+                                                            <span
+                                                                class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold mr-2">R</span>
+                                                            <span class="font-medium text-indigo-800">Refer</span>
+                                                        </div>
+                                                        <p class="text-sm text-gray-700">Share information about
+                                                            appropriate campus resources and offer to help them connect
+                                                            with these services.</p>
+                                                    </div>
+                                                    <div class="bg-indigo-50 p-4 rounded-lg">
+                                                        <div class="flex items-center mb-2">
+                                                            <span
+                                                                class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold mr-2">E</span>
+                                                            <span class="font-medium text-indigo-800">Extend</span>
+                                                        </div>
+                                                        <p class="text-sm text-gray-700">Follow up appropriately while
+                                                            respecting boundaries and privacy. Maintain supportive
+                                                            communication.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="border-t border-gray-200 pt-6">
+                                                <h3 class="font-medium text-lg mb-4">Do's and Don'ts</h3>
+                                                <div class="grid md:grid-cols-2 gap-6">
+                                                    <div>
+                                                        <h4 class="flex items-center text-green-700 font-medium mb-3">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2"
+                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2" d="M5 13l4 4L19 7" />
+                                                            </svg>
+                                                            Do's
+                                                        </h4>
+                                                        <ul class="space-y-2">
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-green-600 mr-2 mt-0.5"
+                                                                    fill="none" viewBox="0 0 24 24"
+                                                                    stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Listen actively without
+                                                                    judgment</span>
+                                                            </li>
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-green-600 mr-2 mt-0.5"
+                                                                    fill="none" viewBox="0 0 24 24"
+                                                                    stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Express concern using "I"
+                                                                    statements</span>
+                                                            </li>
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-green-600 mr-2 mt-0.5"
+                                                                    fill="none" viewBox="0 0 24 24"
+                                                                    stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Respect privacy and
+                                                                    confidentiality</span>
+                                                            </li>
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-green-600 mr-2 mt-0.5"
+                                                                    fill="none" viewBox="0 0 24 24"
+                                                                    stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Know your limits and campus
+                                                                    resources</span>
+                                                            </li>
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-green-600 mr-2 mt-0.5"
+                                                                    fill="none" viewBox="0 0 24 24"
+                                                                    stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M5 13l4 4L19 7" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Document interactions
+                                                                    appropriately</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h4 class="flex items-center text-red-700 font-medium mb-3">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2"
+                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                                            </svg>
+                                                            Don'ts
+                                                        </h4>
+                                                        <ul class="space-y-2">
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Promise confidentiality you
+                                                                    can't maintain</span>
+                                                            </li>
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Try to diagnose or provide
+                                                                    therapy</span>
+                                                            </li>
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Minimize their concerns or
+                                                                    experiences</span>
+                                                            </li>
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Take responsibility for
+                                                                    their decisions</span>
+                                                            </li>
+                                                            <li class="flex items-start">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-red-600 mr-2 mt-0.5" fill="none"
+                                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                                                </svg>
+                                                                <span class="text-gray-800">Wait if you see warning
+                                                                    signs of crisis</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Conversation Starters -->
+                                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                                        <h2 class="text-xl font-semibold text-gray-800 mb-6">Conversation Starters</h2>
+
+                                        <div class="space-y-4">
+                                            <div class="p-4 bg-blue-50 rounded-lg">
+                                                <h3 class="font-medium text-blue-800 mb-2">Expressing Concern</h3>
+                                                <ul class="space-y-2">
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">"I've noticed [specific
+                                                            observation], and I'm concerned about you. How are you
+                                                            doing?"</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-blue-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">"I wanted to check in with you
+                                                            because you seem [different/distracted/upset]
+                                                            lately."</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="p-4 bg-green-50 rounded-lg">
+                                                <h3 class="font-medium text-green-800 mb-2">Active Listening</h3>
+                                                <ul class="space-y-2">
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-green-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">"It sounds like you're feeling
+                                                            [reflect what you're hearing]. Is that right?"</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-green-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">"Can you tell me more about what's
+                                                            been going on?"</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="p-4 bg-purple-50 rounded-lg">
+                                                <h3 class="font-medium text-purple-800 mb-2">Offering Support</h3>
+                                                <ul class="space-y-2">
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">"There are resources on campus that
+                                                            might be helpful. Would you like me to tell you about
+                                                            them?"</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-purple-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">"How can I best support you right
+                                                            now?"</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="p-4 bg-yellow-50 rounded-lg">
+                                                <h3 class="font-medium text-yellow-800 mb-2">Making Referrals</h3>
+                                                <ul class="space-y-2">
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-yellow-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">"The counseling center has helped
+                                                            many students with similar concerns. Would you like me to
+                                                            help you connect with them?"</span>
+                                                    </li>
+                                                    <li class="flex items-start">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-5 w-5 text-yellow-600 mr-2 mt-0.5" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                                        </svg>
+                                                        <span class="text-gray-800">"Would it be helpful if we walked
+                                                            over to the wellness center together?"</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-6">
+                                            <button
+                                                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                                                Download Conversation Guide
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab Content - Referral Process (Hidden by default) -->
+                                <div id="content-refer ral" class="space-y-6 hidden">
+                                    <!-- Referral Process Steps -->
+                                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                                        <h2 class="text-xl font-semibold text-gray-800 mb-6">Referral Process Steps</h2>
+
+                                        <ol class="list-decimal list-inside space-y-4">
+                                            <li>
+                                                <strong>Identify the Need:</strong> Recognize signs that a student may
+                                                benefit from professional support.
+                                            </li>
+                                            <li>
+                                                <strong>Discuss Options:</strong> Talk to the student about available
+                                                resources and why you think a referral is appropriate.
+                                            </li>
+                                            <li>
+                                                <strong>Make the Referral:</strong> Provide specific information about
+                                                the resource, including how to access it and what to expect.
+                                            </li>
+                                            <li>
+                                                <strong>Follow Up:</strong> Check in with the student after the referral
+                                                to see how they are doing and if they need further assistance.
+                                            </li>
+                                        </ol>
+
+                                        <div class="mt-6">
+                                            <button
+                                                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                                                Download Referral Checklist
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Referral Resources -->
+                                    <div class="bg-white rounded-xl shadow-sm p-6 card">
+                                        <h2 class="text-xl font-semibold text-gray-800 mb-6">Referral Resources</h2>
+
+                                        <ul class="space-y-4">
+                                            <li>
+                                                <strong>Campus Counseling Center:</strong> Offers free, confidential
+                                                counseling services for students.
+                                            </li>
+                                            <li>
+                                                <strong>Wellness Center:</strong> Provides health services and wellness
+                                                programs.
+                                            </li>
+                                            <li>
+                                                <strong>Academic Support Services:</strong> Helps with academic stress
+                                                and
+                                                time management.
+                                            </li>
+                                            <li>
+                                                <strong>Peer Support Groups:</strong> Connects students with peers
+                                                facing
+                                                similar challenges.
+                                            </li>
+                                        </ul>
+
+                                        <div class="mt-6">
+                                            <button
+                                                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+                                                Download Resource List
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
