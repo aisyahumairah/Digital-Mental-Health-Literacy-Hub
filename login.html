@@ -23,7 +23,7 @@
             <h1 class="text-2xl font-bold text-gray-900">MindWell Hub</h1>
             <p class="mt-2 text-gray-500 text-center">Sign in to your account</p>
         </div>
-        <form class="space-y-6">
+        <form class="space-y-6" id="loginForm">
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email address</label>
                 <input id="email" name="email" type="email" required
@@ -53,6 +53,70 @@
             <a href="signup.html" class="text-indigo-600 hover:underline font-medium">Sign up</a>
         </p>
     </div>
+
+    <script>
+        // Create dummy accounts
+        const users = [
+            { email: "student@example.com", password: "password123", role: "student" },
+            { email: "professional@example.com", password: "password123", role: "professional" },
+            { email: "member@example.com", password: "password123", role: "member" },
+            { email: "admin@example.com", password: "password123", role: "admin" }
+        ];
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email === "" || password === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            const foundUser = users.find(user => user.email === email && user.password === password);
+
+            if (foundUser) {
+                alert("Login successful!");
+                localStorage.removeItem('failedAttempts');
+                localStorage.removeItem('lockoutTime');
+                if (foundUser.role === "admin") {
+                    window.location.href = "admin/admindb.html";
+                } else if (foundUser.role === "professional") {
+                    window.location.href = "professional/proffessionaltool.html";
+                } else if (foundUser.role === "member") {
+                    window.location.href = "member/faculty.html";
+                } else {
+                    window.location.href = "student/dashboard.html";
+                }
+            } else {
+                let failedAttempts = parseInt(localStorage.getItem('failedAttempts')) || 0;
+                failedAttempts++;
+                localStorage.setItem('failedAttempts', failedAttempts);
+
+                if (failedAttempts >= 5) {
+                    localStorage.setItem('lockoutTime', Date.now());
+                    window.location.href = "login-blocked.html";
+                } else {
+                    alert("Invalid email or password. Attempts remaining: " + (5 - failedAttempts));
+                }
+            }
+        });
+
+        // Check for lockout on page load
+        window.onload = function() {
+            const lockoutTime = localStorage.getItem('lockoutTime');
+            if (lockoutTime) {
+                const fifteenMinutes = 15 * 60 * 1000; // 15 minutes in milliseconds
+                if (Date.now() - parseInt(lockoutTime) < fifteenMinutes) {
+                    window.location.href = "login-blocked.html";
+                } else {
+                    localStorage.removeItem('failedAttempts');
+                    localStorage.removeItem('lockoutTime');
+                }
+            }
+        };
+    </script>
 </body>
 
 </html>
